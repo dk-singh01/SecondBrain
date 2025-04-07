@@ -1,13 +1,14 @@
 
 import mongoose, {model, Schema } from "mongoose";
-//creating usermodel and table schema
 
 
+//userSchema defined
 const UserSchema = new Schema({
     username: {type: String, unique: true},
     password: {type: String}
 });
 
+//contentSchema defined
 const ContentSchema = new Schema({
     title: String,
     link: String,
@@ -15,7 +16,7 @@ const ContentSchema = new Schema({
     userId: {type: mongoose.Types.ObjectId, ref: "User", required: true}
 });
 
-
+//Creating and exporting UserModel and ContentModel
 export const ContentModel = model("Content", ContentSchema);
 export const UserModel = model("User", UserSchema);
  

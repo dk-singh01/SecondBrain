@@ -6,7 +6,7 @@ import { ContentModel, UserModel } from "./db";
 import { JWT_PASSWORD } from "./config";
 import { userMiddleware } from "./middleware";
 //connecting to database;
-mongoose.connect("mongodb+srv://divyanshusingh1101:QOSYnHbQQPV7rTk0@cluster0.s5vmhfx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect("YOUR_MONGOOSE_URL");
 
 const app = express();
 app.use(express.json());

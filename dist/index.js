@@ -19,7 +19,7 @@ const db_1 = require("./db");
 const config_1 = require("./config");
 const middleware_1 = require("./middleware");
 //connecting to database;
-mongoose_1.default.connect("mongodb+srv://divyanshusingh1101:QOSYnHbQQPV7rTk0@cluster0.s5vmhfx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+mongoose_1.default.connect("");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.get("/api/v1/signin", (req, res) => __awaiter(void 0, void 0, void 0, function* () {

@@ -1,17 +1,18 @@
 import express from "express";
-import { random } from "./utils";
+import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import { ContentModel, LinkModel, UserModel } from "./db";
 import { JWT_PASSWORD } from "./config";
 import { userMiddleware } from "./middleware";
 import cors from "cors";
 
+dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 app.post("/api/v1/signup", async (req, res) => {
-    // TODO: zod validation , hash the password
+    
     const username = req.body.username;
     const password = req.body.password;
 
@@ -108,7 +109,7 @@ app.post("/api/v1/brain/share", userMiddleware, async (req, res) => {
                 })
                 return;
             }
-            const hash = random(10);
+            const hash = "Dkdkfjsa";
             await LinkModel.create({
                 userId: req.userId,
                 hash: hash
